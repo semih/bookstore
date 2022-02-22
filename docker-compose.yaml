@@ -6,10 +6,12 @@ services:
     ports:
       - 9091:8080
     environment:
-      DB_URL: "jdbc:h2:tcp://172.24.0.2:1521/testdb;DB_CLOSE_DELAY=-1"
+      DB_URL: "jdbc:h2:tcp://h2db/testdb;DB_CLOSE_DELAY=-1"
+      DB_USERNAME: "sa"
+      DB_PASSWORD: "as"
 
   h2db:
-    image: oscarfonts/h2
+    image: buildo/h2database
     platform: linux/amd64
     ports:
       - 9092:8082
